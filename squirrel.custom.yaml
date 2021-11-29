@@ -1,0 +1,126 @@
+patch:
+  us_keyboard_layout: false
+
+  # for veteran chord-typist
+  chord_duration: 0.1  # seconds
+
+  # options: always | never | appropriate
+  show_notifications_when: appropriate
+
+  style:
+    color_scheme: pill
+    # optional: define both light and dark color schemes to match system appearance
+    #color_scheme: solarized_light
+    #color_scheme_dark: solarized_dark
+
+    # Deprecated since 0.36, Squirrel 0.15
+    #horizontal: false
+    # NOTE: do not set a default value for `candidate_list_layout`, in order to
+    # keep the deprecated `horizontal` option working for existing users.
+    candidate_list_layout: linear  # stacked | linear
+    text_orientation: horizontal  # horizontal | vertical
+    inline_preedit: true
+
+    corner_radius: 10
+    hilited_corner_radius: 0
+    border_height: 0
+    border_width: 0
+    # space between candidates in stacked layout
+    line_spacing: 5
+    # space between preedit and candidates in non-inline mode
+    spacing: 10
+
+    candidate_format: '%@'
+
+    # adjust the base line of vertical text
+    #base_offset: 6
+    font_face: 'Lucida Grande'
+    font_point: 21
+    #label_font_face: 'Lucida Grande'
+    label_font_point: 18
+    #comment_font_face: 'Lucida Grande'
+    comment_font_point: 18
+
+  preset_color_schemes:
+    native:
+      name: 系統配色
+
+    apathy:
+      name: 冷漠／Apathy
+      author: LIANG Hai
+      horizontal: true  # 水平排列
+      inline_preedit: true #单行显示，false双行显示
+      candidate_format: "%c\u2005%@\u2005"  # 编号 %c 和候选词 %@ 前后的空间
+      corner_radius: 5  #候选条圆角
+      border_height: 0
+      border_width: 0
+      back_color: 0xFFFFFF  #候选条背景色
+      font_face: "PingFangSC-Regular,HanaMinB"  #候选词字体
+      font_point: 16  #候选字词大小
+      text_color: 0x424242  #高亮选中词颜色
+      label_font_face: "STHeitiSC-Light"   #候选词编号字体
+      label_font_point: 12   #候选编号大小
+      hilited_candidate_text_color: 0xEE6E00  #候选文字颜色
+      hilited_candidate_back_color: 0xFFF0E4  #候选文字背景色
+      comment_text_color: 0x999999  #拼音等提示文字颜色
+
+    pill:
+      author: "placeless"
+      candidate_format: "%c'%@''"
+      comment_text_color: 0x999999
+      corner_radius: 5
+      font_face: PingFangSC
+      font_point: 17
+      label_font_point: 17
+      back_color: 0x283228
+      text_color: 0xF0F0F0
+      label_color: 0x283228
+      hilited_candidate_back_color: 0xF0F0F0
+      hilited_candidate_text_color: 0x283228
+      hilited_candidate_label_color: 0xF0F0F0
+      name: "药丸／Pill"
+
+  app_options:
+    com.apple.Spotlight:
+      ascii_mode: true
+    com.alfredapp.Alfred:
+      ascii_mode: true
+    com.runningwithcrayons.Alfred-2:
+      ascii_mode: true
+    com.blacktree.Quicksilver:
+      ascii_mode: true
+    com.apple.Terminal:
+      ascii_mode: true
+      no_inline: true
+    com.googlecode.iterm2:
+      ascii_mode: true
+      no_inline: true
+    org.vim.MacVim:
+      ascii_mode: true  # 初始爲西文模式
+      no_inline: true   # 不使用行內編輯
+      vim_mode: true    # 退出VIM插入模式自動切換輸入法狀態
+    com.apple.dt.Xcode:
+      ascii_mode: true
+    com.barebones.textwrangler:
+      ascii_mode: true
+    com.macromates.TextMate.preview:
+      ascii_mode: true
+    com.github.atom:
+      ascii_mode: true
+    com.microsoft.VSCode:
+      ascii_mode: true
+    com.sublimetext.2:
+      ascii_mode: true
+    org.gnu.Aquamacs:
+      ascii_mode: true
+    org.gnu.Emacs:
+      ascii_mode: true
+      no_inline: true
+    co.zeit.hyper:
+      ascii_mode: true
+    com.google.Chrome:
+      # 規避 https://github.com/rime/squirrel/issues/435
+      inline: true
+    ru.keepcoder.Telegram:
+      # 規避 https://github.com/rime/squirrel/issues/475
+      inline: true
